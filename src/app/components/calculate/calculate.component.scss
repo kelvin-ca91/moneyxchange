@@ -1,0 +1,20 @@
+.calculate {
+  background-color: #ccc;
+  border-top: 5px solid #999;
+  border-bottom: 5px solid #999;
+  padding: 160px 0 40px;
+
+  button {
+    padding: 10px 70px;
+  }
+
+  input {
+    text-align: center;
+  }
+}
+
+.content-list {
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

@@ -1,0 +1,14 @@
+footer {
+  background-color: #ccc;
+  border-top: 5px solid #999;
+  margin-top: 100px;
+  padding: 15px 0;
+
+  .square {
+    background-color: #999;
+    display: inline-block;
+    height: 60px;
+    margin-right: 20px;
+    width: 60px;
+  }
+}

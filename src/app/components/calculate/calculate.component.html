@@ -1,0 +1,58 @@
+<div class="calculate">
+  <div class="container">
+    <form #form="ngForm" (ngSubmit)="calculate(form.value)">
+      <div class="row">
+        <div class="col-sm-6">
+          <input
+            type="number"
+            name="amount"
+            ngModel
+            required
+            placeholder="EUR"
+            class="form-control"
+          />
+        </div>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            name="moneyExchange"
+            readonly
+            [placeholder]="typeMoneyExchange.type"
+            class="form-control"
+            [value]="
+              moneyExchange
+                | currency: 'CAD':'':'0.2-4'
+                | currencySymbol: typeMoneyExchange.symbol
+            "
+          />
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col text-center">
+          <button [disabled]="!form.valid" class="btn btn-success">
+            CALCULATE
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="historic-price pt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col" *ngFor="let price of listHistoric">
+        <h3 class="text-center">
+          {{ price.date }}
+        </h3>
+        <hr />
+        <ul class="list-group" class="content-list">
+          <li class="list-group-item" *ngFor="let item of price.rates">
+            <span class="text-info">{{ item.iso }}:</span> {{ item.value }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
